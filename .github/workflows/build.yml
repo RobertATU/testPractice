@@ -13,5 +13,12 @@ jobs:
         with:
           java-version: '17'
           distribution: 'adopt'
-      - name: Build with Maven
-        run: mvn test
+      - name: Test Report
+        uses: dorny/test-reporter@v1
+        if: success() || failure()
+        with:
+         name: Test Results
+         path: ${{ github.workspace }}/target/surefire-reports/TEST-TestSuite.xml
+         reporter: java-junit
+         java-version: 17
+
