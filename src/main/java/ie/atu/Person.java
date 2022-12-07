@@ -1,6 +1,9 @@
 package ie.atu;
 
 public class Person {
+    public static void main(String[] args) {
+        System.out.println("Running Docker Image");
+    }
     private String name, city,id;
     private int age, balance;
 
